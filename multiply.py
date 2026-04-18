@@ -6,3 +6,7 @@ def multiply(a, b):
     Args: a, b (float): 곱할 두 수
     Returns: float: a * b"""
     return a * b
+
+def test_multiply_float(self):
+    """소수점 곱셈"""
+    self.assertAlmostEqual(multiply(0.1, 0.2), 0.02, places=5)
