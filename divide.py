@@ -8,6 +8,19 @@ def divide(a, b):
     Raises: ValueError: b가 0일 때"""
     if b == 0:
         raise ValueError(
-            "Cannot divide by zero / 0으로 나눌 수 없습니다."
+            f"Cannot divide by zero: divisor was {b}"
         )
     return a / b
+
+def test_divide_negative(self):
+    """음수 나눗셈"""
+    self.assertEqual(divide(-10, 2), -5.0)
+
+def test_divide_by_zero_msg(self):
+    """에러 메시지에 divisor 값 포함 확인"""
+    with self.assertRaises(ValueError) as ctx:
+        divide(5, 0)
+    self.assertIn(
+        "divisor was 0",
+        str(ctx.exception)
+    )
